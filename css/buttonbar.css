@@ -1,0 +1,44 @@
+.buttonbar {
+    display: flex;
+    flex-direction: row;
+    font-size: .5em;
+    justify-content: space-around;
+    padding: 6px;
+}
+
+.buttonbar__button {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    color: rgba(100, 100, 100, 1);
+    flex: 1 0 auto;
+}
+
+.buttonbar__button:nth-child(n+2) {
+    border-left: 2px solid rgba(25, 25, 25, 0.25);
+}
+
+.buttonbar__button:hover {
+    color: rgb(23, 134, 23);
+}
+
+.buttonbar__button:active {
+    color: rgb(23, 134, 23);
+}
+
+
+/* @media(pointer: coarse) {
+    .buttonbar__button {
+        background-color: blue;
+    }
+} */
+
+@media(hover: none) and (pointer: coarse) {
+    .buttonbar__button:hover {
+        color: green;
+    }
+}
+
+.buttonbar__buttonlabel {
+    font-size: 4em;
+}

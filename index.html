@@ -1,0 +1,178 @@
+<!DOCTYPE html class="container">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mijn Markt</title>
+
+    <!-- https://realfavicongenerator.net/ -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/img/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="shortcut icon" type="image/png"
+    href="/img/favicon/favicon-32x32.png" " />
+
+    <!-- Google Fonts-->
+    <link rel="preconnect " href="https://fonts.gstatic.com " />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap "
+      rel="stylesheet "
+    />
+
+    <!-- Root Stylesheet -->
+    <link rel="stylesheet " href="css/style.css " />
+
+    <!-- Line Icons -->
+    <link href="fonts/line-icons/font-css/LineIcons.css " rel="stylesheet " />
+    <!-- <link rel="stylesheet " href="css/icon-font.css " /> -->
+    <!-- <link rel="stylesheet " href="css/style.css " />
+    <link rel="shortcut icon " type="image/png " href="img/favicon.png " /> -->
+
+    <script src="simulation.js "></script>
+  </head>
+
+  <body class="container">
+    <header class="container__topbar">
+      <div class="menubar">
+        <img class="menubar__icon" src="img/fresh-market-logo-png.png " />
+        <div class="menubar__menuitems">
+          <div class="menubar__menuitem">Bestelling</div>
+          <div class="menubar__menuitem">Zoeken</div>
+          <div class="menubar__menuitem">Instellingen</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container__content">
+      <div class="login">
+
+        <div class="login__label">Login</div>
+        <form class="login__form" action="/ ">
+          
+          <div class="login2__forminputwrapper">
+            
+            <input
+              class="login2__forminput "
+              type="tel"
+              pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+              id="mobnum"
+              name="mobnum"
+              value=""
+              placeholder=" "
+              required
+            />
+            <label class="login2__forminputlabel" for='mobnum'>mobiel nummer<span class="login2__forminputlabelvalmgs">+31652693 of 0652786518</span>
+            </label>
+
+            <div class="login2__forminputsymbol">
+              <i class="lni lni-mobile"></i>
+            </div>
+          </div>
+
+          <div class="login2__forminputwrapper">
+            
+            <input
+              class="login2__forminput "
+              type="password"
+              pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+              id="pwd"
+              name="pwd"
+              value=""
+              placeholder=" "
+              required
+            />
+            <label class="login2__forminputlabel" for='pwd'>wachtwoord</label>
+
+            <div class="login2__forminputsymbol">
+              <i class="lni lni-lock-alt"></i>
+            </div>
+
+          </div>
+
+          <!-- <div class="login__forminputwrapper login__forminputwrapper--invalid">
+          <input
+            class="login__forminput "
+            type="tel"
+            pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+            id="mobnum"
+            name="mobnum"
+            value=""
+            placeholder="mobiel nummer"
+          />
+          <div class="login__forminputsymbol">
+            <i class="lni lni-mobile"></i>
+          </div>
+          <div class="login__forminputerror">
+            <div class="login__forminputerrortext" onclick=””>
+              <div class="login__forminputerrortextdescr" >06-52694792 of +31652694792</div>
+              <i class="lni lni-pointer-left lni-lg login__forminputerroricon"></i>
+            </div>
+            
+          </div>
+        </div>
+        <div class="login__forminputwrapper login__forminputwrapper--invalid">
+          <input
+            class="login__forminput "
+            type="password"
+            pattern=""
+            id="pwd"
+            name="pwd"
+            value=""
+            placeholder="wachtwoord"
+          />
+          <div class="login__forminputsymbol">
+            <i class="lni lni-mobile"></i>
+          </div>
+          <div class="login__forminputerror">
+            <div class="login__forminputerrortext" onclick=””>
+              <div class="login__forminputerrortextdescr" data-validate="hi Mum">Veilig ww; bijv appel-moes-banaan</div>
+              <i class="lni lni-pointer-left lni-lg login__forminputerroricon"></i>
+            </div>
+            
+          </div>
+        </div> -->
+        </form>
+      </div>
+    </main>
+
+    <footer class="container__bottombar">
+      <div class="buttonbar">
+        <div class="buttonbar__button" onclick="clickMyOrder() ">
+          <div class="buttonbar__buttonlabel">
+            <i class="lni lni-ticket-alt"></i>
+          </div>
+        </div>
+        <div class="buttonbar__button">
+          <div class="buttonbar__buttonlabel">
+            <i class="lni lni-search"></i>
+          </div>
+        </div>
+        <div class="buttonbar__button">
+          <div class="buttonbar__buttonlabel"><i class="lni lni-user"></i></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
