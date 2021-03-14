@@ -53,6 +53,15 @@
     <script src="simulation.js "></script>
   </head>
 
+  <div class="error" onclick="clickOn(event,'error')">
+    <div class="error__message">
+      <div class="error__messageheader">Fout!</div>
+      <div class="error__messagetext">
+        Mobiele nummer of wachtwoord niet juist
+      </div>
+    </div>
+  </div>
+
   <body class="container">
     <header class="container__topbar">
       <div class="menubar">
@@ -67,76 +76,191 @@
 
     <main class="container__content">
 
-     
+      <div class="articlelist">
+        <ul class="articlelist__list">
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemtext">een</span>
+            <button class="articlelist__listitembutton">verwijder</button>
+            <button class="articlelist__listitembutton">niets</button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemtext">twee</span>
+            <button class="articlelist__listitembutton">verwijder</button>
+            <button class="articlelist__listitembutton">niets</button>
+          </li>
+        </ul>
+
+      </div>
+
+
       <div class="login">
+        <div class="form__wrapper">
+          <img class="form__icondesktop" src="/img/fresh-market-logo.png" />
+          <img class="form__iconmobile" src="/img/fresh-market-logo-leaf.png" />
+          <div class="form__formwrapper">
+            <div class="form__label">Login</div>
+            <form class="form__form">
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminput"
+                  type="tel"
+                  pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+                  id="mobnum"
+                  name="mobnum"
+                  value=""
+                  placeholder=" "
+                  required
+                />
+                <label class="form__forminputlabel" for="mobnum"
+                  >mobiel nummer<span class="form__forminputlabelvalmgs"
+                    >+31652693 of 0652786518</span
+                  >
+                </label>
 
-        <div class="login__wrapper">
+                <div class="form__forminputsymbol">
+                  <i class="lni lni-mobile"></i>
+                </div>
+              </div>
 
-        <img class="login__icondesktop" src="/img/fresh-market-logo.png"/>
-        <img class="login__iconmobile" src="/img/fresh-market-logo-leaf.png"/>
-        <div class="login__formwrapper">
-        <div class="login__label">Login</div>
-        <form class="login__form" action="/ ">
-          
-          <div class="login__forminputwrapper">
-            
-            <input
-              class="login__forminput "
-              type="tel"
-              pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
-              id="mobnum"
-              name="mobnum"
-              value=""
-              placeholder=" "
-              required
-            />
-            <label class="login__forminputlabel" for='mobnum'>mobiel nummer<span class="login__forminputlabelvalmgs">+31652693 of 0652786518</span>
-            </label>
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminput"
+                  type="password"
+                  pattern="^.*{8,}"
+                  id="pwd"
+                  name="pwd"
+                  value=""
+                  placeholder=" "
+                  required
+                />
+                <label class="form__forminputlabel" for="pwd">wachtwoord</label>
 
-            <div class="login__forminputsymbol">
-              <i class="lni lni-mobile"></i>
-            </div>
+                <div class="form__forminputsymbol">
+                  <i class="lni lni-lock-alt"></i>
+                </div>
+              </div>
+
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminputbutton"
+                  type="submit"
+                  name="loginbutton"
+                  value="Login"
+                  onclick="clickOn(event,'login')"
+                />
+              </div>
+
+              <div class="form__resetlink">
+                <a class="form__resetlink--link">nummer / wachtwoord </a
+                >vergeten ?
+              </div>
+            </form>
           </div>
-
-          <div class="login__forminputwrapper">
-            
-            <input
-              class="login__forminput "
-              type="password"
-              pattern="^.*{8,}"
-              id="pwd"
-              name="pwd"
-              value=""
-              placeholder=" "
-              required
-            />
-            <label class="login__forminputlabel" for='pwd'>wachtwoord</label>
-
-            <div class="login__forminputsymbol">
-              <i class="lni lni-lock-alt"></i>
-            </div>
-
-          </div>
-
-          <div class="login__forminputwrapper">
-            <input
-              class="login__forminputbutton "
-              type="submit"
-              name="loginbutton"
-              value="Login"
-            />
-          </div>
-
-
-        </form>
+        </div>
       </div>
-      </div>
+
+      <div class="registreer">
+        <div class="form__wrapper">
+          <img class="form__icondesktop" src="/img/fresh-market-logo.png" />
+          <img class="form__iconmobile" src="/img/fresh-market-logo-leaf.png" />
+          <div class="form__formwrapper">
+            <div class="form__label">Login</div>
+            <form class="form__form">
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminput"
+                  type="tel"
+                  pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+                  id="mobnumr"
+                  name="mobnumr"
+                  value=""
+                  placeholder=" "
+                  required
+                />
+                <label class="form__forminputlabel" for="mobnumr"
+                  >mobiel nummer<span class="form__forminputlabelvalmgs"
+                    >+31652693 of 0652786518</span
+                  >
+                </label>
+
+                <div class="form__forminputsymbol">
+                  <i class="lni lni-mobile"></i>
+                </div>
+              </div>
+
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminput"
+                  type="password"
+                  pattern="^.*{8,}"
+                  id="pwd1"
+                  name="pwd1"
+                  value=""
+                  placeholder=" "
+                  required
+                />
+                <label class="form__forminputlabel" for="pwd1">wachtwoord</label>
+
+                <div class="form__forminputsymbol">
+                  <i class="lni lni-lock-alt"></i>
+                </div>
+              </div>
+
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminput"
+                  type="password"
+                  pattern="^.*{8,}"
+                  id="pwd2"
+                  name="pwd2"
+                  value=""
+                  placeholder=" "
+                  required
+                />
+                <label class="form__forminputlabel" for="pwd2">wachtwoord</label>
+
+                <div class="form__forminputsymbol">
+                  <i class="lni lni-lock-alt"></i>
+                </div>
+              </div>
+
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminput"
+                  type="password"
+                  pattern="^.*{8,}"
+                  id="acccode"
+                  name="acccode"
+                  value=""
+                  placeholder=" "
+                  
+                />
+                <label class="form__forminputlabel" for="acccode">toegangscode</label>
+
+                <div class="form__forminputsymbol">
+                  <i class="lni lni-lock-alt"></i>
+                </div>
+              </div>
+
+              <div class="form__forminputwrapper">
+                <input
+                  class="form__forminputbutton"
+                  type="submit"
+                  name="loginbutton"
+                  value="Registreer"
+                  onclick="clickOn(event,'registreer')"
+                />
+              </div>
+
+            </form>
+          </div>
+        </div>
       </div>
     </main>
 
     <footer class="container__bottombar">
       <div class="buttonbar">
-        <div class="buttonbar__button" onclick="clickMyOrder() ">
+        <div class="buttonbar__button" onclick="clickOn(event,'myorder') ">
           <div class="buttonbar__buttonlabel">
             <i class="lni lni-ticket-alt"></i>
           </div>

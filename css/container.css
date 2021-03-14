@@ -30,6 +30,7 @@
         /* flex-direction: row; */
         flex: 1 1 auto;
         /* background-color: orange; */
+        position:relative;
     }
     
     @media screen and (max-width: 500px) {

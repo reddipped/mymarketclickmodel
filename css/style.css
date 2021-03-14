@@ -3,12 +3,24 @@
 @import "container.css";
 @import "menubar.css";
 @import "login.css";
+@import "registreer.css";
+@import "error.css";
+@import "form.css";
+@import "articlelst.css";
+
 
 *.header *::after,
 *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 1em;
 }
 
 textarea:focus, input:focus{
@@ -25,9 +37,10 @@ body {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.2; */
     color: #777;
-    font-size: 1em;
+    /* font-size: 1em; */
 }
+
