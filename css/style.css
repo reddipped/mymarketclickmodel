@@ -3,11 +3,16 @@
 @import "container.css";
 @import "menubar.css";
 @import "login.css";
+
 *.header *::after,
 *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 html {

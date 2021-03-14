@@ -56,7 +56,7 @@
   <body class="container">
     <header class="container__topbar">
       <div class="menubar">
-        <img class="menubar__icon" src="img/fresh-market-logo-png.png " />
+        <img class="menubar__icon" src="img/fresh-market-logo.png " />
         <div class="menubar__menuitems">
           <div class="menubar__menuitem">Bestelling</div>
           <div class="menubar__menuitem">Zoeken</div>
@@ -66,15 +66,22 @@
     </header>
 
     <main class="container__content">
+
+     
       <div class="login">
 
+        <div class="login__wrapper">
+
+        <img class="login__icondesktop" src="/img/fresh-market-logo.png"/>
+        <img class="login__iconmobile" src="/img/fresh-market-logo-leaf.png"/>
+        <div class="login__formwrapper">
         <div class="login__label">Login</div>
         <form class="login__form" action="/ ">
           
-          <div class="login2__forminputwrapper">
+          <div class="login__forminputwrapper">
             
             <input
-              class="login2__forminput "
+              class="login__forminput "
               type="tel"
               pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
               id="mobnum"
@@ -83,77 +90,47 @@
               placeholder=" "
               required
             />
-            <label class="login2__forminputlabel" for='mobnum'>mobiel nummer<span class="login2__forminputlabelvalmgs">+31652693 of 0652786518</span>
+            <label class="login__forminputlabel" for='mobnum'>mobiel nummer<span class="login__forminputlabelvalmgs">+31652693 of 0652786518</span>
             </label>
 
-            <div class="login2__forminputsymbol">
+            <div class="login__forminputsymbol">
               <i class="lni lni-mobile"></i>
             </div>
           </div>
 
-          <div class="login2__forminputwrapper">
+          <div class="login__forminputwrapper">
             
             <input
-              class="login2__forminput "
+              class="login__forminput "
               type="password"
-              pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+              pattern="^.*{8,}"
               id="pwd"
               name="pwd"
               value=""
               placeholder=" "
               required
             />
-            <label class="login2__forminputlabel" for='pwd'>wachtwoord</label>
+            <label class="login__forminputlabel" for='pwd'>wachtwoord</label>
 
-            <div class="login2__forminputsymbol">
+            <div class="login__forminputsymbol">
               <i class="lni lni-lock-alt"></i>
             </div>
 
           </div>
 
-          <!-- <div class="login__forminputwrapper login__forminputwrapper--invalid">
-          <input
-            class="login__forminput "
-            type="tel"
-            pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
-            id="mobnum"
-            name="mobnum"
-            value=""
-            placeholder="mobiel nummer"
-          />
-          <div class="login__forminputsymbol">
-            <i class="lni lni-mobile"></i>
+          <div class="login__forminputwrapper">
+            <input
+              class="login__forminputbutton "
+              type="submit"
+              name="loginbutton"
+              value="Login"
+            />
           </div>
-          <div class="login__forminputerror">
-            <div class="login__forminputerrortext" onclick=””>
-              <div class="login__forminputerrortextdescr" >06-52694792 of +31652694792</div>
-              <i class="lni lni-pointer-left lni-lg login__forminputerroricon"></i>
-            </div>
-            
-          </div>
-        </div>
-        <div class="login__forminputwrapper login__forminputwrapper--invalid">
-          <input
-            class="login__forminput "
-            type="password"
-            pattern=""
-            id="pwd"
-            name="pwd"
-            value=""
-            placeholder="wachtwoord"
-          />
-          <div class="login__forminputsymbol">
-            <i class="lni lni-mobile"></i>
-          </div>
-          <div class="login__forminputerror">
-            <div class="login__forminputerrortext" onclick=””>
-              <div class="login__forminputerrortextdescr" data-validate="hi Mum">Veilig ww; bijv appel-moes-banaan</div>
-              <i class="lni lni-pointer-left lni-lg login__forminputerroricon"></i>
-            </div>
-            
-          </div>
-        </div> -->
+
+
         </form>
+      </div>
+      </div>
       </div>
     </main>
 
