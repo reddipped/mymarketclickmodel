@@ -9,30 +9,30 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/img/favicon/apple-touch-icon.png"
+      href="img/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/img/favicon/favicon-32x32.png"
+      href="img/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/img/favicon/favicon-16x16.png"
+      href="img/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
     <link
       rel="mask-icon"
-      href="/img/favicon/safari-pinned-tab.svg"
+      href="img/favicon/safari-pinned-tab.svg"
       color="#5bbad5"
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="shortcut icon" type="image/png"
-    href="/img/favicon/favicon-32x32.png" " />
+    href="img/favicon/favicon-32x32.png" " />
 
     <!-- Google Fonts-->
     <link rel="preconnect " href="https://fonts.gstatic.com " />
@@ -75,28 +75,45 @@
     </header>
 
     <main class="container__content">
-
       <div class="articlelist">
         <ul class="articlelist__list">
           <li class="articlelist__listitem">
-            <span class="articlelist__listitemtext">een</span>
-            <button class="articlelist__listitembutton">verwijder</button>
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/rode-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-close"></i>
+            </button>
             <button class="articlelist__listitembutton">niets</button>
           </li>
           <li class="articlelist__listitem">
-            <span class="articlelist__listitemtext">twee</span>
-            <button class="articlelist__listitembutton">verwijder</button>
+            <span class="articlelist__listitemtext"
+              ><img src="img/spercieboon.png" class="articlelist__listitemimg"
+            /></span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-close"></i>
+            </button>
             <button class="articlelist__listitembutton">niets</button>
           </li>
         </ul>
-
       </div>
-
 
       <div class="login">
         <div class="form__wrapper">
-          <img class="form__icondesktop" src="/img/fresh-market-logo.png" />
-          <img class="form__iconmobile" src="/img/fresh-market-logo-leaf.png" />
+          <img class="form__icondesktop" src="img/fresh-market-logo.png" />
+          <img class="form__iconmobile" src="img/fresh-market-logo-leaf.png" />
           <div class="form__formwrapper">
             <div class="form__label">Login</div>
             <form class="form__form">
@@ -161,8 +178,8 @@
 
       <div class="registreer">
         <div class="form__wrapper">
-          <img class="form__icondesktop" src="/img/fresh-market-logo.png" />
-          <img class="form__iconmobile" src="/img/fresh-market-logo-leaf.png" />
+          <img class="form__icondesktop" src="img/fresh-market-logo.png" />
+          <img class="form__iconmobile" src="img/fresh-market-logo-leaf.png" />
           <div class="form__formwrapper">
             <div class="form__label">Login</div>
             <form class="form__form">
@@ -199,7 +216,9 @@
                   placeholder=" "
                   required
                 />
-                <label class="form__forminputlabel" for="pwd1">wachtwoord</label>
+                <label class="form__forminputlabel" for="pwd1"
+                  >wachtwoord</label
+                >
 
                 <div class="form__forminputsymbol">
                   <i class="lni lni-lock-alt"></i>
@@ -217,7 +236,9 @@
                   placeholder=" "
                   required
                 />
-                <label class="form__forminputlabel" for="pwd2">wachtwoord</label>
+                <label class="form__forminputlabel" for="pwd2"
+                  >wachtwoord</label
+                >
 
                 <div class="form__forminputsymbol">
                   <i class="lni lni-lock-alt"></i>
@@ -233,9 +254,10 @@
                   name="acccode"
                   value=""
                   placeholder=" "
-                  
                 />
-                <label class="form__forminputlabel" for="acccode">toegangscode</label>
+                <label class="form__forminputlabel" for="acccode"
+                  >toegangscode</label
+                >
 
                 <div class="form__forminputsymbol">
                   <i class="lni lni-lock-alt"></i>
@@ -251,7 +273,6 @@
                   onclick="clickOn(event,'registreer')"
                 />
               </div>
-
             </form>
           </div>
         </div>
