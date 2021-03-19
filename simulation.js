@@ -9,12 +9,14 @@ let errorVisible = false;
 let loginVisible = false;
 let registreerVisible = true;
 let articleListVisible = false ;
+let stallVisible = false;
 
 function update() {
   show("error", errorVisible);
   show("login", loginVisible);
   show("registreer", registreerVisible);
   show("articlelist", articleListVisible);
+  show("stall", stallVisible);
 }
 
 function clickOn(event, component) {
@@ -24,19 +26,36 @@ function clickOn(event, component) {
       errorVisible = false;
       loginVisible = true;
       registreerVisible = false;
+      stallVisible = false ;
       break;
     case "login":
       errorVisible = true;
       loginVisible = true;
       registreerVisible = false;
+      stallVisible = false ;
       break;
     case "error":
         errorVisible = false;
         loginVisible = false;
         registreerVisible = false;
         articleListVisible = true;
+        stallVisible = false ;
         break;
-      
+        case "mystall":
+          errorVisible = false;
+          loginVisible = false;
+          registreerVisible = false;
+          articleListVisible = false;
+          stallVisible = true ;
+          break;
+          
+          case "myorder":
+            errorVisible = false;
+            loginVisible = false;
+            registreerVisible = false;
+            articleListVisible = true;
+            stallVisible = false ;
+            break;
       break;
   }
 

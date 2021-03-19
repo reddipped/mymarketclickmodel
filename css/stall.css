@@ -1,0 +1,135 @@
+.stall {
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+.stall_searchbox {
+
+    display: flex;
+    flex-direction: row-reverse;
+    /* scroll-snap-type: x mandatory; */
+    /* overflow-x: auto; */
+    /* height: 60px; */
+    /* border: 1px solid white; */
+ 
+    scrollbar-width: none;
+    cursor: grab;
+
+
+    position: relative;
+    padding:5px;
+    position: relative;
+
+}
+
+.stall__searchboxlabel {
+    flex: 0 1 auto;
+    align-self: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-bottom: 20px;
+    padding-top: 70px;
+} 
+
+
+
+.stall__searchinputlabel {
+    /* flex: 0 1 auto; */
+    position: absolute;
+    /* width: 100%; */
+    /* height:50px; */
+    left: 20px;
+    top: 15px;
+    /* font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.2em; */
+    /* color: #777; */
+    font-size: 1.5em;
+    transition: .3s all ease;
+}
+
+/* if focus on input or placeholder not shown*/
+
+.stall__searchinput:not(:placeholder-shown)~.stall__searchinputlabel, .stall__searchinput:focus~.stall__searchinputlabel {
+    top: 5px;
+    font-size: .5em;
+}
+
+/* .stall__searchinput:not(:placeholder-shown) ~ .stall__searchinputlabel {
+    top:5px;
+    font-size: .5em;
+} */
+
+.stall__searchinputlabelvalmgs {
+    display: none;
+}
+
+.stall__searchinput:not(:placeholder-shown)~.stall__searchinputlabel>.stall__searchinputlabelvalmgs, .stall__searchinput:focus~.stall__searchinputlabel>.stall__searchinputlabelvalmgs {
+    /* transition: 1s ease-in; */
+    padding-left: 5px;
+    display: initial;
+    color: red;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stall__searchinput,
+input.stall__searchinput:-webkit-autofill, /* autofill browser styling disabled */
+input.stall__searchinput:-webkit-autofill:hover, 
+input.stall__searchinput:-webkit-autofill:focus, 
+textarea.stall__searchinput:-webkit-autofill,
+textarea.stall__searchinput:-webkit-autofill:hover,
+textarea.stall__searchinput:-webkit-autofill:focus,
+select.stall__searchinput:-webkit-autofill,
+select.stall__searchinput:-webkit-autofill:hover,
+select.stall__searchinput:-webkit-autofill:focus  {
+    flex: 0 1 auto;
+    /* position: absolute; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #777;
+    -webkit-text-fill-color: #777;
+    font-size: 1.5em;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
+    background: none;
+    outline: none;
+    border: none;
+    /* max-width:300px;  */
+    min-width: 250px;
+    width:100%;
+    
+    overflow: visible;
+    touch-action: manipulation;
+    background: #e6e6e6;
+    -webkit-box-shadow: 0 0 0px 1000px #e6e6e6 inset;
+    border-radius: 4px;
+}
+
+.stall__searchinputsymbol {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -2px;
+    /* left: 0; */
+    height: 100%;
+    padding-right: 10px;
+    pointer-events: none;
+    color: #666666;
+    font-size: 1.5em;
+    transition: all 0.4s;
+}
+/* 
+.stall__searchinput:not(:placeholder-shown)~.stall__searchinputsymbol, .stall__searchinput:focus~.stall__searchinputsymbol {
+    /* transition: 1s ease-in; */
+    padding-left: 5px;
+} */

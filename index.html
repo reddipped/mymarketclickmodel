@@ -50,6 +50,9 @@
     <!-- <link rel="stylesheet " href="css/style.css " />
     <link rel="shortcut icon " type="image/png " href="img/favicon.png " /> -->
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6f05565a35.js" crossorigin="anonymous"></script>
+
     <script src="simulation.js "></script>
   </head>
 
@@ -75,8 +78,170 @@
     </header>
 
     <main class="container__content">
-      <div class="articlelist">
+      <div class="stall">
+       
+            
+          <div class="stall_searchbox">
+            <input
+              class="stall__searchinput"
+              type="tel"
+              pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+              id="mobnum"
+              name="mobnum"
+              value=""
+              placeholder=" "
+              required
+            />
+            <label class="stall__searchinputlabel" for="mobnum"
+              >Zoeken<span class="stall__searchinputlabelvalmgs">Zoeken</span
+              >
+            </label>
+
+            <div class="stall__searchinputsymbol">
+              <i class="lni lni-search"></i>
+            </div>
+          </div>
+
+          
+
+
         <ul class="articlelist__list">
+
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/rode-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          </ul>
+      </div>
+
+      <div class="articlelist">
+
+        <ul class="articlelist__list">
+          <li class="articlelist__listitem articlelist__listitem--locked">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/rode-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Sperciebonen</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/seldery.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Selderij</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/doperwten.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Doperwten</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/broccoli.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Broccoli</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/groene-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Groene paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
           <li class="articlelist__listitem">
             <span class="articlelist__listitemcontent">
               <img
@@ -94,20 +259,319 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-close"></i>
+              <i class="lni lni-trash"></i>
             </button>
-            <button class="articlelist__listitembutton">niets</button>
           </li>
           <li class="articlelist__listitem">
-            <span class="articlelist__listitemtext"
-              ><img src="img/spercieboon.png" class="articlelist__listitemimg"
-            /></span>
+            <span class="articlelist__listitemcontent">
+              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Sperciebonen</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-close"></i>
+              <i class="lni lni-trash"></i>
             </button>
-            <button class="articlelist__listitembutton">niets</button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/seldery.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Selderij</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/doperwten.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Doperwten</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/broccoli.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Broccoli</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/groene-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Groene paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/rode-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Sperciebonen</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/seldery.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Selderij</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/doperwten.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Doperwten</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/broccoli.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Broccoli</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/groene-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Groene paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/rode-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Sperciebonen</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/seldery.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Selderij</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/doperwten.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Doperwten</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img src="img/broccoli.png" class="articlelist__listitemimg" />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Broccoli</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+
+          <li class="articlelist__listitem">
+            <span class="articlelist__listitemcontent">
+              <img
+                src="img/groene-paprika.png"
+                class="articlelist__listitemimg"
+              />
+              <div class="articlelist__listitemdata">
+                <span class="articlelist__listitemtitle">Groene paprika</span>
+                <div class="articlelist__listitemquantcont">
+                  <input class="articlelist__listitemtextquant" value="300" />
+                  <span class="articlelist__listitemtextqual">stuk</span>
+                  <span class="articlelist__listitemtextqual">gr</span>
+                  <span class="articlelist__listitemtextqual">kg</span>
+                </div>
+              </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
           </li>
         </ul>
+
+      
       </div>
 
       <div class="login">
@@ -283,12 +747,12 @@
       <div class="buttonbar">
         <div class="buttonbar__button" onclick="clickOn(event,'myorder') ">
           <div class="buttonbar__buttonlabel">
-            <i class="lni lni-ticket-alt"></i>
+            <i class="lni lni-shopping-basket"></i>
           </div>
         </div>
         <div class="buttonbar__button">
-          <div class="buttonbar__buttonlabel">
-            <i class="lni lni-search"></i>
+          <div class="buttonbar__buttonlabel" onclick="clickOn(event,'mystall')"">
+            <i class="lni lni-ticket-alt"></i>
           </div>
         </div>
         <div class="buttonbar__button">
