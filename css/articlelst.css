@@ -152,6 +152,29 @@
   .articlelist__listitem::-webkit-scrollbar {
       display:none;
   }
+
+
+
+  .articlelist__listitem--lockedbottom {
+    display: flex;
+    flex-direction: row-reverse;
+    /* scroll-snap-type: x mandatory; */
+    /* overflow-x: auto; */
+    /* height: 60px; */
+    /* border: 1px solid white; */
+    scrollbar-width: none;
+    cursor: grab;
+    position: relative;
+    padding: 5px;
+    position: relative;
+
+    position:sticky;
+    position: -webkit-sticky;
+    
+    bottom: 0;
+    background-color: #FFF;
+    z-index:2;
+}
  
 
   

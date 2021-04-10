@@ -40,20 +40,30 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap "
       rel="stylesheet "
     />
+    <!-- Google Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
 
     <!-- Root Stylesheet -->
     <link rel="stylesheet " href="css/style.css " />
 
     <!-- Line Icons -->
-    <link href="fonts/line-icons/font-css/LineIcons.css " rel="stylesheet " />
+    <!-- <link href="fonts/line-icons/font-css/LineIcons.css " rel="stylesheet " /> -->
     <!-- <link rel="stylesheet " href="css/icon-font.css " /> -->
     <!-- <link rel="stylesheet " href="css/style.css " />
     <link rel="shortcut icon " type="image/png " href="img/favicon.png " /> -->
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/6f05565a35.js" crossorigin="anonymous"></script>
+    <!-- <script
+      src="https://kit.fontawesome.com/6f05565a35.js"
+      crossorigin="anonymous"
+    ></script> -->
 
+    <script src="lib/jquery-3.6.0.min.js"></script>
     <script src="simulation.js "></script>
+
   </head>
 
   <div class="error" onclick="clickOn(event,'error')">
@@ -79,61 +89,110 @@
 
     <main class="container__content">
       <div class="stall">
-       
-            
-          <div class="stall_searchbox">
-            <input
-              class="stall__searchinput"
-              type="tel"
-              pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
-              id="mobnum"
-              name="mobnum"
-              value=""
-              placeholder=" "
-              required
-            />
-            <label class="stall__searchinputlabel" for="mobnum"
-              >Zoeken<span class="stall__searchinputlabelvalmgs">Zoeken</span
+        <div class="stall_selectedarticlebackdrop article1"  onclick="clickOn(event,'mystall')" >
+          <div class="stall_selectedarticle ">
+            <p class="stall__selectedarticletitle">Sperciebonen</p>
+            <div class="stall_selectedarticleimgcontainer">
+              <img src="img/spercieboon.png" class="stall_selectedarticleimg" />
+            </div>
+            <div class="articlelist__listitemquantcont">
+              <input class="articlelist__listitemtextquant" value="300" />
+              <span
+                class="artpiece articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                onclick="clickOn(event,'artpiece')"
+                >stuk</span
               >
-            </label>
+              <span class="artgr articlelist__listitemtextqual" onclick="clickOn(event,'artgr')">gr</span>
+              <span class="artkg articlelist__listitemtextqual" onclick="clickOn(event,'artkg')">kg</span>
+            </div>
+            <div class="stall_selectedarticlebtn">Bestel</div>
+          </div>
+        </div>
+        <div class="stall_searchbox">
+          <input
+            class="stall__searchinput"
+            type="tel"
+            pattern=""
+            id="stallsearch"
+            name="stallsearch"
+            value=""
+            placeholder=" "
+            required
+          />
+          <label class="stall__searchinputlabel" for="stallsearch"
+            >Zoeken
+          </label>
+          <div class="stall__searchinputsymbol">
+            <span class="material-icons-outlined md-36"> search </span>
+          </div>
+        </div>
+        <div class="stall__shopitemscattitle">Groente</div>
 
-            <div class="stall__searchinputsymbol">
-              <i class="lni lni-search"></i>
+        <div class="stall__shopitemscat">
+          <div class="stall__shopitem" onclick="clickOn(event,'article1')">
+            <p class="stall__shopitemtitle">Sperciebonen</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/spercieboon.png" class="stall__shopitemimg" />
+            </div>
+          </div>
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Selderie</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/seldery.png" class="stall__shopitemimg" />
+            </div>
+          </div>
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Paprika rood</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/rode-paprika.png" class="stall__shopitemimg" />
             </div>
           </div>
 
-          
-
-
-        <ul class="articlelist__list">
-
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/rode-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
-            </button>
-          </li>
-          </ul>
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Paprika groen</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/groene-paprika.png" class="stall__shopitemimg" />
+            </div>
+          </div>
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Broccoli</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/broccoli.png" class="stall__shopitemimg" />
+            </div>
+          </div>
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Doperwten</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/doperwten.png" class="stall__shopitemimg" />
+            </div>
+          </div>
+        </div>
+        <div class="stall__shopitemscattitle">Fruit</div>
+        <div class="stall__shopitemscat">
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Aarbeien</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/aardbei.jpg" class="stall__shopitemimg" />
+            </div>
+          </div>
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Ananas</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/ananas.png" class="stall__shopitemimg" />
+            </div>
+          </div>
+          <div class="stall__shopitem">
+            <p class="stall__shopitemtitle">Druiven wit</p>
+            <div class="stall_shopitemimgcontainer">
+              <img src="img/wittedruiven.png" class="stall__shopitemimg" />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="articlelist">
-
         <ul class="articlelist__list">
-          <li class="articlelist__listitem articlelist__listitem--locked">
+          <li class="articlelist__listitem">
             <span class="articlelist__listitemcontent">
               <img
                 src="img/rode-paprika.png"
@@ -143,7 +202,10 @@
                 <span class="articlelist__listitemtitle">Paprika</span>
                 <div class="articlelist__listitemquantcont">
                   <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">stuk</span>
+                  <span
+                    class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                    >stuk</span
+                  >
                   <span class="articlelist__listitemtextqual">gr</span>
                   <span class="articlelist__listitemtextqual">kg</span>
                 </div>
@@ -161,7 +223,10 @@
                 <div class="articlelist__listitemquantcont">
                   <input class="articlelist__listitemtextquant" value="300" />
                   <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">gr</span>
+                  <span
+                    class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                    >gr</span
+                  >
                   <span class="articlelist__listitemtextqual">kg</span>
                 </div>
               </div>
@@ -179,7 +244,10 @@
                   <input class="articlelist__listitemtextquant" value="300" />
                   <span class="articlelist__listitemtextqual">stuk</span>
                   <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual articlelist__listitemtextqual--selected">kg</span>
+                  <span
+                    class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                    >kg</span
+                  >
                 </div>
               </div>
             </span>
@@ -564,14 +632,48 @@
                   <span class="articlelist__listitemtextqual">kg</span>
                 </div>
               </div>
+            </span>
+            <button class="articlelist__listitembutton">
+              <i class="lni lni-trash"></i>
+            </button>
+          </li>
+<!--
+
+
+
+        <div class="stall_searchbox">
+          <input
+            class="stall__searchinput"
+            type="tel"
+            pattern=""
+            id="stallsearch"
+            name="stallsearch"
+            value=""
+            placeholder=" "
+            required
+          />
+          <label class="stall__searchinputlabel" for="stallsearch"
+            >Zoeken
+          </label>
+          <div class="stall__searchinputsymbol">
+            <span class="material-icons-outlined md-36"> search </span>
+          </div>
+        </div>
+
+
+-->
+
+
+
+          <li class="articlelist__listitem articlelist__listitem--lockedbottom ">
+            <span class="articlelist__listitemcontent">
+              <div>BESTEL BUTTON</div>
             </span>
             <button class="articlelist__listitembutton">
               <i class="lni lni-trash"></i>
             </button>
           </li>
         </ul>
-
-      
       </div>
 
       <div class="login">
@@ -747,16 +849,20 @@
       <div class="buttonbar">
         <div class="buttonbar__button" onclick="clickOn(event,'myorder') ">
           <div class="buttonbar__buttonlabel">
-            <i class="lni lni-shopping-basket"></i>
+            <span class="material-icons-outlined md-36"> receipt_long </span>
           </div>
         </div>
         <div class="buttonbar__button">
-          <div class="buttonbar__buttonlabel" onclick="clickOn(event,'mystall')"">
-            <i class="lni lni-ticket-alt"></i>
-          </div>
+          <div class="buttonbar__buttonlabel"
+          onclick="clickOn(event,'mystall')"">
+          <!-- 
+          <i class="lni lni-ticket-alt"></i> -->
+          <span class="material-icons-outlined md-36"> storefront </span>
         </div>
-        <div class="buttonbar__button">
-          <div class="buttonbar__buttonlabel"><i class="lni lni-user"></i></div>
+      </div>
+      <div class="buttonbar__button">
+        <div class="buttonbar__buttonlabel">
+          <span class="material-icons-outlined md-36"> perm_identity </span>
         </div>
       </div>
     </footer>
