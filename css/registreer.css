@@ -4,7 +4,7 @@
     flex-flow: column nowrap; */
     /* align-items: stretch; */
     flex: 0 1 auto;
-    border: 2px solid rgba(25, 25, 25, 0.25);
+    border: 2px solid var(--bordercolor);
     padding: 10px;
     border-radius: 20px;
     /* width: 300px; */

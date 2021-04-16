@@ -12,7 +12,7 @@
     height: 100%;
     overflow: auto;
 
-    background-color: rgba(0,0,0,0.4);
+    background-color: var(--backdropcolor);
 
 
 }
@@ -25,12 +25,12 @@
     /* justify-content: center; */
 
     z-index: 4;
-    border: 2px solid rgba(25, 25, 25, 0.25);
+    border: 2px solid var(--bordercolor);
     padding: 10px;
     border-radius: 20px;
     /* width: 300px; */
     position: relative;
-    background:#ffffff;
+    background: var(--bkgroundcolor);
     width:50%;
     height:20%;
  

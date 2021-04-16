@@ -46,6 +46,14 @@
       rel="stylesheet"
     />
 
+    <!-- leaflet map integration -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
     <!-- Root Stylesheet -->
     <link rel="stylesheet " href="css/style.css " />
 
@@ -62,8 +70,12 @@
     ></script> -->
 
     <script src="lib/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
     <script src="simulation.js "></script>
-
   </head>
 
   <div class="error" onclick="clickOn(event,'error')">
@@ -76,6 +88,7 @@
   </div>
 
   <body class="container">
+    
     <header class="container__topbar">
       <div class="menubar">
         <img class="menubar__icon" src="img/fresh-market-logo.png " />
@@ -88,9 +101,13 @@
     </header>
 
     <main class="container__content">
+      <div class="container__contentleft">
       <div class="stall">
-        <div class="stall_selectedarticlebackdrop article1"  onclick="clickOn(event,'mystall')" >
-          <div class="stall_selectedarticle ">
+        <div
+          class="stall_selectedarticlebackdrop article1"
+          onclick="clickOn(event,'mystall')"
+        >
+          <div class="stall_selectedarticle">
             <p class="stall__selectedarticletitle">Sperciebonen</p>
             <div class="stall_selectedarticleimgcontainer">
               <img src="img/spercieboon.png" class="stall_selectedarticleimg" />
@@ -102,8 +119,16 @@
                 onclick="clickOn(event,'artpiece')"
                 >stuk</span
               >
-              <span class="artgr articlelist__listitemtextqual" onclick="clickOn(event,'artgr')">gr</span>
-              <span class="artkg articlelist__listitemtextqual" onclick="clickOn(event,'artkg')">kg</span>
+              <span
+                class="artgr articlelist__listitemtextqual"
+                onclick="clickOn(event,'artgr')"
+                >gr</span
+              >
+              <span
+                class="artkg articlelist__listitemtextqual"
+                onclick="clickOn(event,'artkg')"
+                >kg</span
+              >
             </div>
             <div class="stall_selectedarticlebtn">Bestel</div>
           </div>
@@ -190,8 +215,50 @@
         </div>
       </div>
 
-      <div class="articlelist">
+      <div id="articlelist" class="articlelist">
         <ul class="articlelist__list">
+          <li
+            class="pickuploc articlelist__listitem articlelist__listitem--fit articlelist__listitem--flexcol articlelist__listitem--lockedtop"
+          >
+            <div class="articlelist__orderloc">
+              <div class="articlelist__orderlocdate">
+                <p>01-01-2020 07:00-16:00</p>
+                <p>Binnenrotte Rotterdam</p>
+              </div>
+              <div class="articlelist__orderloccity"></div>
+              <a
+                onClick="openLoc(51.9205400, 4.4886000)"
+                class="articlelist__orderlocmap"
+                id="mapid1"
+              ></a>
+            </div>
+            <div class="articlelist__orderloc">
+              <div class="articlelist__orderlocdate">
+                <p>04-01-2020 07:00-16:00</p>
+                <p>Hesseplaats, Ommoord</p>
+              </div>
+              <div class="articlelist__orderloccity"></div>
+              <a
+                onClick="openLoc(51.96304, 4.55329)"
+                class="articlelist__orderlocmap"
+                id="mapid2"
+              ></a>
+            </div>
+
+            <div class="articlelist__orderloc">
+              <div class="articlelist__orderlocdate">
+                <p>07-01-2020 07:00-16:00</p>
+                <p>Raadhuisplein 1, Voorhout</p>
+              </div>
+              <div class="articlelist__orderloccity"></div>
+              <a
+                onClick="openLoc(52.2229, 4.48689)"
+                class="articlelist__orderlocmap"
+                id="mapid3"
+              ></a>
+            </div>
+          </li>
+
           <li class="articlelist__listitem">
             <span class="articlelist__listitemcontent">
               <img
@@ -212,7 +279,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -232,7 +299,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -252,7 +319,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -269,7 +336,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -286,7 +353,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
 
@@ -307,7 +374,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -327,7 +394,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -344,7 +411,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -361,7 +428,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -378,7 +445,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -395,7 +462,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
 
@@ -416,7 +483,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -436,7 +503,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -453,7 +520,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -470,7 +537,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -487,7 +554,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -504,7 +571,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
 
@@ -525,7 +592,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -545,7 +612,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -562,7 +629,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -579,7 +646,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -596,7 +663,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
           <li class="articlelist__listitem">
@@ -613,7 +680,7 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
 
@@ -634,44 +701,21 @@
               </div>
             </span>
             <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
+              <span class="material-icons-outlined md-36">delete</span>
             </button>
           </li>
-<!--
 
-
-
-        <div class="stall_searchbox">
-          <input
-            class="stall__searchinput"
-            type="tel"
-            pattern=""
-            id="stallsearch"
-            name="stallsearch"
-            value=""
-            placeholder=" "
-            required
-          />
-          <label class="stall__searchinputlabel" for="stallsearch"
-            >Zoeken
-          </label>
-          <div class="stall__searchinputsymbol">
-            <span class="material-icons-outlined md-36"> search </span>
-          </div>
-        </div>
-
-
--->
-
-
-
-          <li class="articlelist__listitem articlelist__listitem--lockedbottom ">
-            <span class="articlelist__listitemcontent">
-              <div>BESTEL BUTTON</div>
+          <li
+            class="pickupbtn articlelist__listitem articlelist__listitem--lockedbottom"
+          >
+            <span class="articlelist__orderbtncontainer">
+              <button
+                class="articlelist__orderbtn"
+                onclick="clickOn(event,'pickuploc')"
+              >
+                Kies afhaalmoment
+              </button>
             </span>
-            <button class="articlelist__listitembutton">
-              <i class="lni lni-trash"></i>
-            </button>
           </li>
         </ul>
       </div>
@@ -701,7 +745,7 @@
                 </label>
 
                 <div class="form__forminputsymbol">
-                  <i class="lni lni-mobile"></i>
+                  <span class="material-icons-outlined"> phone_iphone </span>
                 </div>
               </div>
 
@@ -719,7 +763,7 @@
                 <label class="form__forminputlabel" for="pwd">wachtwoord</label>
 
                 <div class="form__forminputsymbol">
-                  <i class="lni lni-lock-alt"></i>
+                  <span class="material-icons-outlined"> lock </span>
                 </div>
               </div>
 
@@ -747,7 +791,7 @@
           <img class="form__icondesktop" src="img/fresh-market-logo.png" />
           <img class="form__iconmobile" src="img/fresh-market-logo-leaf.png" />
           <div class="form__formwrapper">
-            <div class="form__label">Login</div>
+            <div class="form__label">Registreer</div>
             <form class="form__form">
               <div class="form__forminputwrapper">
                 <input
@@ -767,7 +811,7 @@
                 </label>
 
                 <div class="form__forminputsymbol">
-                  <i class="lni lni-mobile"></i>
+                  <span class="material-icons-outlined"> phone_iphone </span>
                 </div>
               </div>
 
@@ -787,7 +831,7 @@
                 >
 
                 <div class="form__forminputsymbol">
-                  <i class="lni lni-lock-alt"></i>
+                  <span class="material-icons-outlined"> lock </span>
                 </div>
               </div>
 
@@ -807,7 +851,7 @@
                 >
 
                 <div class="form__forminputsymbol">
-                  <i class="lni lni-lock-alt"></i>
+                  <span class="material-icons-outlined"> lock </span>
                 </div>
               </div>
 
@@ -826,7 +870,7 @@
                 >
 
                 <div class="form__forminputsymbol">
-                  <i class="lni lni-lock-alt"></i>
+                  <span class="material-icons-outlined"> verified_user </span>
                 </div>
               </div>
 
@@ -843,6 +887,52 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="container__contentright">
+
+      <div class="pickuploc__dktp">
+      <div class="articlelist__orderloc">
+        <div class="articlelist__orderlocdate">
+          <p>01-01-2020 07:00-16:00</p>
+          <p>Binnenrotte Rotterdam</p>
+        </div>
+        <div class="articlelist__orderloccity"></div>
+        <a
+          onClick="openLoc(51.9205400, 4.4886000)"
+          class="articlelist__orderlocmap"
+          id="mapid1a"
+        ></a>
+      </div>
+      <div class="articlelist__orderloc">
+        <div class="articlelist__orderlocdate">
+          <p>04-01-2020 07:00-16:00</p>
+          <p>Hesseplaats, Ommoord</p>
+        </div>
+        <div class="articlelist__orderloccity"></div>
+        <a
+          onClick="openLoc(51.96304, 4.55329)"
+          class="articlelist__orderlocmap"
+          id="mapid2a"
+        ></a>
+      </div>
+
+      <div class="articlelist__orderloc">
+        <div class="articlelist__orderlocdate">
+          <p>07-01-2020 07:00-16:00</p>
+          <p>Raadhuisplein 1, Voorhout</p>
+        </div>
+        <div class="articlelist__orderloccity"></div>
+        <a
+          onClick="openLoc(52.2229, 4.48689)"
+          class="articlelist__orderlocmap"
+          id="mapid3a"
+        ></a>
+      </div>
+    </div>
+
+
+
+    </div>
     </main>
 
     <footer class="container__bottombar">

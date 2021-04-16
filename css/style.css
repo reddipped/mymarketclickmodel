@@ -10,7 +10,27 @@
 @import "stall.css";
 
 
-*.header *::after,
+:root {
+    --backdropcolor: #00000066;
+    --fgcolor: #777777;
+    --buttoncolor: #66DF4C;
+    --linkhovercolor: #66DF4C;
+    --btnfgcolor: #FFFFFF ;
+    --bkgroundcolor: #ffffff;
+    --bordercolor: #1919193F;
+    --formerrorcolor: #FF0000;
+    --formfieldbkgroundcolor: #e6e6e6;
+    --artcatbgcolor:#FF0000;
+    --artcatfgcolor:#FFFFFF;
+
+    --barbkgroundcolor: #FAFAFA;
+    --swipedelbuttoncolor: #FF0000;
+    --swipealtbuttoncolor: #FA500;
+    --listitmtitlecolor: #FF0000;
+
+}
+
+*, *.header *::after,
 *::before {
     margin: 0;
     padding: 0;
@@ -24,12 +44,18 @@
     font-size: 1em;
 }
 
+*:focus {
+    outline: none;
+    opacity: 0.9;
+}
+
 textarea:focus, input:focus{
     outline: none;
 }
 
 html {
     font-size: 100%;
+    box-sizing: border-box;
 }
 
 body {
@@ -41,7 +67,7 @@ body {
     /* font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     line-height: 1.2; */
-    color: #777;
+    color: var(--fgcolor);
     /* font-size: 1em; */
 }
 

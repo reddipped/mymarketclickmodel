@@ -1,27 +1,40 @@
 // //let showLogin = true;
 // let showMyOrders = false;
 // let showOrders = false;
+
+// var mymap = null;
+
 (function () {
   window.addEventListener("load", update, false);
-
- 
-
 })();
 
-
-$(document).ready(function(){
-
-  console.log('hi mum');
-  $(window).scroll(function() {
-    console.log("window scrol");
-  });
-
-  $("articlelist").scroll(function ()  {
-   console.log("Scorllin");
- })
-})
-
-
+$(document).ready(function () {
+  // 51.92053, 4.48857
+  // mymap = L.map('mapid1').setView([51.92053, 4.48857], 13);
+  // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+  //   console.log('hi mum');
+  //   $(window).scroll(function() {
+  //     console.log("window scrol");
+  //   });
+  //   $("articlelist").scroll(function ()  {
+  //    console.log("Scorllin");
+  //  })
+  //  $('body').scroll(function(e){
+  //   console.log(e);
+  // });
+  // $("container__content").scroll(function ()  {
+  //   console.log("container__content");
+  // })
+  // $(document).on( 'scroll', function(){
+  //   console.log('Event Fired');
+  // });
+  // document.addEventListener('scroll', function (event) {
+  //   console.log('DDDD',event.target.id);
+  //   if (event.target.id === 'articlelist') { // or any other filtering condition
+  //       console.log('scrolling', event.target);
+  //   }
+  // }, true /*Capture event*/);
+});
 
 let errorVisible = false;
 let loginVisible = false;
@@ -29,6 +42,7 @@ let registreerVisible = true;
 let articleListVisible = false;
 let stallVisible = false;
 let article1Visible = false;
+let pickuplocVisible = false ;
 
 function update() {
   show("error", errorVisible);
@@ -37,6 +51,54 @@ function update() {
   show("articlelist", articleListVisible);
   show("stall", stallVisible);
   show("article1", article1Visible);
+  showWithHeight("pickuploc", pickuplocVisible ? 500 : 0);
+  show("pickuploc__dktp", pickuplocVisible);
+
+  if (articleListVisible) {
+    createMap("mapid1",51.92054, 4.4886);
+    createMap("mapid2",51.96304, 4.55329);
+    createMap("mapid3",52.2229, 4.48689);
+    
+    createMap("mapid1a",51.92054, 4.4886);
+    createMap("mapid2a",51.96304, 4.55329);
+    createMap("mapid3a",52.2229, 4.48689);
+    // mymap = L.map("mapid1", {
+    //   attributionControl: false,
+    //   zoomControl: false,
+    //   center: [51.92054, 4.4886],
+    //   zoom: 17,
+    // });
+
+    // L.marker([51.92054, 4.4886]).addTo(mymap);
+    // L.control.attribution({ prefix: "" }).addTo(mymap);
+    // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}", {
+    //   foo: "bar",
+    //   attribution:
+    //     '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+    // }).addTo(mymap);
+
+
+
+  }
+}
+
+function createMap(mapID,Lat,Long) {
+
+  const mymap = L.map(mapID, {
+    attributionControl: false,
+    zoomControl: false,
+    center: [Lat, Long],
+    zoom: 17,
+  });
+
+  L.marker([Lat, Long]).addTo(mymap);
+  L.control.attribution({ prefix: "" }).addTo(mymap);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}", {
+    foo: "bar",
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+  }).addTo(mymap);
+
 }
 
 function clickOn(event, component) {
@@ -104,8 +166,10 @@ function clickOn(event, component) {
       document
         .getElementsByClassName("artpiece")[0]
         .classList.add("articlelist__listitemtextqual--selected");
-        var evt = event ? event : window.event;
-        if (evt.stopPropagation) {evt.stopPropagation();}
+      var evt = event ? event : window.event;
+      if (evt.stopPropagation) {
+        evt.stopPropagation();
+      }
 
       break;
 
@@ -122,8 +186,10 @@ function clickOn(event, component) {
       document
         .getElementsByClassName("artgr")[0]
         .classList.add("articlelist__listitemtextqual--selected");
-        var evt = event ? event : window.event;
-        if (evt.stopPropagation) {evt.stopPropagation();}
+      var evt = event ? event : window.event;
+      if (evt.stopPropagation) {
+        evt.stopPropagation();
+      }
       break;
 
     case "artkg":
@@ -139,9 +205,21 @@ function clickOn(event, component) {
       document
         .getElementsByClassName("artkg")[0]
         .classList.add("articlelist__listitemtextqual--selected");
-        var evt = event ? event : window.event;
-        if (evt.stopPropagation) {evt.stopPropagation();}
+      var evt = event ? event : window.event;
+      if (evt.stopPropagation) {
+        evt.stopPropagation();
+      }
       break;
+
+      case "pickuploc":
+        errorVisible = false;
+        loginVisible = false;
+        registreerVisible = false;
+        articleListVisible = true;
+        stallVisible = false;
+        article1Visible = false;
+        pickuplocVisible = true;
+        break;
 
       break;
   }
@@ -157,24 +235,61 @@ function show(className, visible) {
   }
 }
 
-// document.querySelector("ul").addEventListener("click", (e) => {
-//   const li = e.target.closest("li");
-//   const btn = e.target.closest("button");
-//   if (li && li.scrollLeft === 0) {
-//     li.scrollBy({
-//       left: 1,
-//       behavior: "smooth",
-//     });
-//   } else if (!btn && li) {
-//     li.scrollBy({
-//       left: -1,
-//       behavior: "smooth",
-//     });
-//   } else if (btn && li) {
-//     li.remove();
-//   }
-// });
+function showWithHeight(className, maxHeight) {
+  
+    document.getElementsByClassName(className)[0].style.maxHeight = maxHeight;
+  
+}
+
+function openLoc(lat, lng) {
+  var geocoords = lat + "," + lng;
+
+  if (macPlatform()) {
+    window.open("maps://?q=" + geocoords, "_system");
+  } else {
+    var label = encodeURI("Hier staan wij!"); // encode the label!
+    window.open("geo:0,0?q=" + geocoords + "(" + label + ")", "_system");
+  }
+}
+
+function macPlatform() {
+
+  return ['MacIntel','iPhone'].includes(navigator.platform) ;
+        
+}
 
 
+function iOS() {
+  return (
+    [
+      "iPad Simulator",
+      "iPhone Simulator",
+      "iPod Simulator",
+      "iPad",
+      "iPhone",
+      "iPod",
+    ].includes(navigator.platform) ||
+    // iPad on iOS 13 detection
+    (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  );
+}
+
+document.querySelector("ul").addEventListener("click", (e) => {
+  const li = e.target.closest("li");
+  const btn = e.target.closest("button");
+  if (li && li.scrollLeft === 0) {
+    li.scrollBy({
+      left: 1,
+      behavior: "smooth",
+    });
+  } else if (!btn && li) {
+    li.scrollBy({
+      left: -1,
+      behavior: "smooth",
+    });
+  } else if (btn && li) {
+    li.remove();
+  }
+});
 
 // $('#my_div1').hasScrollBar()
