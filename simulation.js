@@ -51,17 +51,14 @@ function update() {
   show("articlelist", articleListVisible);
   show("stall", stallVisible);
   show("article1", article1Visible);
-  showWithHeight("pickuploc", pickuplocVisible ? 500 : 0);
+  showAllWithHeight("orderloc", pickuplocVisible);
   show("pickuploc__dktp", pickuplocVisible);
 
-  if (articleListVisible) {
-    createMap("mapid1",51.92054, 4.4886);
-    createMap("mapid2",51.96304, 4.55329);
-    createMap("mapid3",52.2229, 4.48689);
+  // if (articleListVisible) {
+    // createMap("mapid1",51.92054, 4.4886);
+    // createMap("mapid2",51.96304, 4.55329);
+    // createMap("mapid3",52.2229, 4.48689);
     
-    createMap("mapid1a",51.92054, 4.4886);
-    createMap("mapid2a",51.96304, 4.55329);
-    createMap("mapid3a",52.2229, 4.48689);
     // mymap = L.map("mapid1", {
     //   attributionControl: false,
     //   zoomControl: false,
@@ -79,7 +76,7 @@ function update() {
 
 
 
-  }
+  // }
 }
 
 function createMap(mapID,Lat,Long) {
@@ -136,12 +133,14 @@ function clickOn(event, component) {
       break;
 
     case "myorder":
+      clickOrderLoc("",false);
       errorVisible = false;
       loginVisible = false;
       registreerVisible = false;
       articleListVisible = true;
       stallVisible = false;
       article1Visible = false;
+      pickuplocVisible= false;
       break;
 
     case "article1":
@@ -218,13 +217,23 @@ function clickOn(event, component) {
         articleListVisible = true;
         stallVisible = false;
         article1Visible = false;
-        pickuplocVisible = true;
+        pickuplocVisible = true;  
         break;
 
       break;
   }
 
   update();
+
+  if (component === "pickuploc") {
+      
+
+    createMap("mapid1",51.92054, 4.4886);
+    createMap("mapid2",51.96304, 4.55329);
+    createMap("mapid3",52.2229, 4.48689);
+  }
+
+
 }
 
 function show(className, visible) {
@@ -235,9 +244,18 @@ function show(className, visible) {
   }
 }
 
-function showWithHeight(className, maxHeight) {
+function showAllWithHeight(id, show) {
+
+  const elements = document.querySelectorAll('*[id^="'+id+'"]');
+  for (var elm = 0 ; elm < elements.length ; elm++) {
+    if (show) {
+    elements[elm].classList.remove('articlelist__listitem--hidden');
+    } else {
+      elements[elm].classList.add('articlelist__listitem--hidden');
+    }
+  };
   
-    document.getElementsByClassName(className)[0].style.maxHeight = maxHeight;
+    // document.getElementsByIds(id)[0].style.maxHeight = maxHeight;
   
 }
 
@@ -256,6 +274,20 @@ function macPlatform() {
 
   return ['MacIntel','iPhone'].includes(navigator.platform) ;
         
+}
+
+function clickOrderLoc(id, clicked = true) {
+
+ let orderlocs = document.querySelectorAll('*[id^="orderloc"]');
+ for (var ol = 0 ; ol < orderlocs.length ; ol++) {
+  if (orderlocs[ol].id != id) {
+    if (clicked) {    
+      orderlocs[ol].classList.add('articlelist__listitem--nodisplay');
+  } else {
+    orderlocs[ol].classList.remove('articlelist__listitem--nodisplay');
+  }
+  }
+ }
 }
 
 

@@ -88,13 +88,12 @@
   </div>
 
   <body class="container">
-    
     <header class="container__topbar">
       <div class="menubar">
         <img class="menubar__icon" src="img/fresh-market-logo.png " />
         <div class="menubar__menuitems">
-          <div class="menubar__menuitem">Bestelling</div>
-          <div class="menubar__menuitem">Zoeken</div>
+          <div class="menubar__menuitem" onclick="clickOn(event,'myorder')" >Bestelling</div>
+          <div class="menubar__menuitem" onclick="clickOn(event,'mystall')">Zoeken</div>
           <div class="menubar__menuitem">Instellingen</div>
         </div>
       </div>
@@ -102,837 +101,922 @@
 
     <main class="container__content">
       <div class="container__contentleft">
-      <div class="stall">
-        <div
-          class="stall_selectedarticlebackdrop article1"
-          onclick="clickOn(event,'mystall')"
-        >
-          <div class="stall_selectedarticle">
-            <p class="stall__selectedarticletitle">Sperciebonen</p>
-            <div class="stall_selectedarticleimgcontainer">
-              <img src="img/spercieboon.png" class="stall_selectedarticleimg" />
-            </div>
-            <div class="articlelist__listitemquantcont">
-              <input class="articlelist__listitemtextquant" value="300" />
-              <span
-                class="artpiece articlelist__listitemtextqual articlelist__listitemtextqual--selected"
-                onclick="clickOn(event,'artpiece')"
-                >stuk</span
-              >
-              <span
-                class="artgr articlelist__listitemtextqual"
-                onclick="clickOn(event,'artgr')"
-                >gr</span
-              >
-              <span
-                class="artkg articlelist__listitemtextqual"
-                onclick="clickOn(event,'artkg')"
-                >kg</span
-              >
-            </div>
-            <div class="stall_selectedarticlebtn">Bestel</div>
-          </div>
-        </div>
-        <div class="stall_searchbox">
-          <input
-            class="stall__searchinput"
-            type="tel"
-            pattern=""
-            id="stallsearch"
-            name="stallsearch"
-            value=""
-            placeholder=" "
-            required
-          />
-          <label class="stall__searchinputlabel" for="stallsearch"
-            >Zoeken
-          </label>
-          <div class="stall__searchinputsymbol">
-            <span class="material-icons-outlined md-36"> search </span>
-          </div>
-        </div>
-        <div class="stall__shopitemscattitle">Groente</div>
-
-        <div class="stall__shopitemscat">
-          <div class="stall__shopitem" onclick="clickOn(event,'article1')">
-            <p class="stall__shopitemtitle">Sperciebonen</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/spercieboon.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Selderie</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/seldery.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Paprika rood</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/rode-paprika.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Paprika groen</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/groene-paprika.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Broccoli</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/broccoli.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Doperwten</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/doperwten.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-        </div>
-        <div class="stall__shopitemscattitle">Fruit</div>
-        <div class="stall__shopitemscat">
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Aarbeien</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/aardbei.jpg" class="stall__shopitemimg" />
-            </div>
-          </div>
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Ananas</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/ananas.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-          <div class="stall__shopitem">
-            <p class="stall__shopitemtitle">Druiven wit</p>
-            <div class="stall_shopitemimgcontainer">
-              <img src="img/wittedruiven.png" class="stall__shopitemimg" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="articlelist" class="articlelist">
-        <ul class="articlelist__list">
-          <li
-            class="pickuploc articlelist__listitem articlelist__listitem--fit articlelist__listitem--flexcol articlelist__listitem--lockedtop"
+        <!-- SHOP -->
+        <div class="stall">
+          <div
+            class="stall_selectedarticlebackdrop article1"
+            onclick="clickOn(event,'mystall')"
           >
-            <div class="articlelist__orderloc">
-              <div class="articlelist__orderlocdate">
-                <p>01-01-2020 07:00-16:00</p>
-                <p>Binnenrotte Rotterdam</p>
+            <div class="stall_selectedarticle">
+              <p class="stall__selectedarticletitle">Sperciebonen</p>
+              <div class="stall_selectedarticleimgcontainer">
+                <img
+                  src="img/spercieboon.png"
+                  class="stall_selectedarticleimg"
+                />
               </div>
-              <div class="articlelist__orderloccity"></div>
-              <a
-                onClick="openLoc(51.9205400, 4.4886000)"
-                class="articlelist__orderlocmap"
-                id="mapid1"
-              ></a>
+              <div class="articlelist__listitemquantcont">
+                <input class="articlelist__listitemtextquant" value="300" />
+                <span
+                  class="artpiece articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                  onclick="clickOn(event,'artpiece')"
+                  >stuk</span
+                >
+                <span
+                  class="artgr articlelist__listitemtextqual"
+                  onclick="clickOn(event,'artgr')"
+                  >gr</span
+                >
+                <span
+                  class="artkg articlelist__listitemtextqual"
+                  onclick="clickOn(event,'artkg')"
+                  >kg</span
+                >
+              </div>
+              <div class="stall_selectedarticlebtn">Bestel</div>
             </div>
-            <div class="articlelist__orderloc">
-              <div class="articlelist__orderlocdate">
-                <p>04-01-2020 07:00-16:00</p>
-                <p>Hesseplaats, Ommoord</p>
+          </div>
+          <div class="stall_searchbox">
+            <input
+              class="stall__searchinput"
+              type="tel"
+              pattern=""
+              id="stallsearch"
+              name="stallsearch"
+              value=""
+              placeholder=" "
+              required
+            />
+            <label class="stall__searchinputlabel" for="stallsearch"
+              >Zoeken
+            </label>
+            <div class="stall__searchinputsymbol">
+              <span class="material-icons-outlined md-36"> search </span>
+            </div>
+          </div>
+
+          
+          <div class="stall__shopitemscattitle">Groente</div>
+
+          <div class="stall__shopitemscat">
+            <div class="stall__shopitem" onclick="clickOn(event,'article1')">
+              <p class="stall__shopitemtitle">Sperciebonen</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/spercieboon.png" class="stall__shopitemimg" />
               </div>
-              <div class="articlelist__orderloccity"></div>
-              <a
-                onClick="openLoc(51.96304, 4.55329)"
-                class="articlelist__orderlocmap"
-                id="mapid2"
-              ></a>
+            </div>
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Selderie</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/seldery.png" class="stall__shopitemimg" />
+              </div>
+            </div>
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Paprika rood</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/rode-paprika.png" class="stall__shopitemimg" />
+              </div>
             </div>
 
-            <div class="articlelist__orderloc">
-              <div class="articlelist__orderlocdate">
-                <p>07-01-2020 07:00-16:00</p>
-                <p>Raadhuisplein 1, Voorhout</p>
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Paprika groen</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/groene-paprika.png" class="stall__shopitemimg" />
               </div>
-              <div class="articlelist__orderloccity"></div>
-              <a
-                onClick="openLoc(52.2229, 4.48689)"
-                class="articlelist__orderlocmap"
-                id="mapid3"
-              ></a>
             </div>
-          </li>
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Broccoli</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/broccoli.png" class="stall__shopitemimg" />
+              </div>
+            </div>
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Doperwten</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/doperwten.png" class="stall__shopitemimg" />
+              </div>
+            </div>
+          </div>
+          <div class="stall__shopitemscattitle">Fruit</div>
+          <div class="stall__shopitemscat">
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Aarbeien</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/aardbei.jpg" class="stall__shopitemimg" />
+              </div>
+            </div>
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Ananas</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/ananas.png" class="stall__shopitemimg" />
+              </div>
+            </div>
+            <div class="stall__shopitem">
+              <p class="stall__shopitemtitle">Druiven wit</p>
+              <div class="stall_shopitemimgcontainer">
+                <img src="img/wittedruiven.png" class="stall__shopitemimg" />
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/rode-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span
-                    class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
-                    >stuk</span
-                  >
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
+        <!-- ORDER LIST -->
+        <div id="articlelist" class="articlelist">
+          <ul class="articlelist__list">
+            <!-- <li
+              class="pickuploc articlelist__listitem articlelist__listitem--fit articlelist__listitem--flexcol articlelist__listitem--lockedtop"
+            >
+              <div id="orderloc1" class="articlelist__orderlocmob" onClick="clickOrderLoc(this.id)">
+                <div class="articlelist__orderlocinfomob">
+                  <p>01-01-2020 07:00-16:00</p>
+                  <p>Binnenrotte Rotterdam</p>
                 </div>
+                <a
+                  onClick="openLoc(51.9205400, 4.4886000)"
+                  class="articlelist__orderlocmapmob"
+                  ><span class="material-icons-outlined md-36"> map </span>
+                </a>
+                <button class="articlelist__orderlocmobbtn1">
+                  <span class="material-icons-outlined md-36">delete</span>
+                </button>
               </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Sperciebonen</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span
-                    class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
-                    >gr</span
-                  >
-                  <span class="articlelist__listitemtextqual">kg</span>
+              <div id="orderloc2" class="articlelist__orderlocmob" onClick="clickOrderLoc(this.id)">
+                <div class="articlelist__orderlocinfomob">
+                  <p>04-01-2020 07:00-16:00</p>
+                  <p>Hesseplaats, Ommoord</p>
                 </div>
+                <a
+                  onClick="openLoc(51.96304, 4.55329)"
+                  class="articlelist__orderlocmapmob"
+                  ><span class="material-icons-outlined md-36"> map </span>
+                  </a>
               </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/seldery.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Selderij</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span
-                    class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
-                    >kg</span
-                  >
+              <div id="orderloc3" class="articlelist__orderlocmob" onClick="clickOrderLoc(this.id)">
+                <div class="articlelist__orderlocinfomob">
+                  <p>07-01-2020 07:00-16:00</p>
+                  <p>Raadhuisplein 1, Voorhout</p>
                 </div>
+                <div class="articlelist__orderloccitymob"></div>
+                <a
+                  onClick="openLoc(52.2229, 4.48689)"
+                  class="articlelist__orderlocmapmob"
+                  ><span class="material-icons-outlined md-36"> map </span></a
+                >
               </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/doperwten.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Doperwten</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/broccoli.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Broccoli</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/groene-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Groene paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/rode-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Sperciebonen</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/seldery.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Selderij</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/doperwten.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Doperwten</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/broccoli.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Broccoli</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/groene-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Groene paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/rode-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Sperciebonen</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/seldery.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Selderij</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/doperwten.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Doperwten</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/broccoli.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Broccoli</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/groene-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Groene paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/rode-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/spercieboon.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Sperciebonen</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/seldery.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Selderij</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/doperwten.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Doperwten</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img src="img/broccoli.png" class="articlelist__listitemimg" />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Broccoli</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-
-          <li class="articlelist__listitem">
-            <span class="articlelist__listitemcontent">
-              <img
-                src="img/groene-paprika.png"
-                class="articlelist__listitemimg"
-              />
-              <div class="articlelist__listitemdata">
-                <span class="articlelist__listitemtitle">Groene paprika</span>
-                <div class="articlelist__listitemquantcont">
-                  <input class="articlelist__listitemtextquant" value="300" />
-                  <span class="articlelist__listitemtextqual">stuk</span>
-                  <span class="articlelist__listitemtextqual">gr</span>
-                  <span class="articlelist__listitemtextqual">kg</span>
-                </div>
-              </div>
-            </span>
-            <button class="articlelist__listitembutton">
-              <span class="material-icons-outlined md-36">delete</span>
-            </button>
-          </li>
-
-          <li
-            class="pickupbtn articlelist__listitem articlelist__listitem--lockedbottom"
-          >
-            <span class="articlelist__orderbtncontainer">
-              <button
-                class="articlelist__orderbtn"
-                onclick="clickOn(event,'pickuploc')"
-              >
-                Kies afhaalmoment
+            </li> -->
+       <div class="articlelist__listitems--lockedtop">
+            <li id="orderloc1" class="articlelist__listitem articlelist__listitem--fit articlelist__listitem--orderloc "
+            onClick="clickOrderLoc(this.id)">
+              <span class="articlelist__listitemcontent articlelist__listitemcontent--orderloc">
+                <div  class="articlelist__orderlocmob" >
+                  <div class="articlelist__orderlocmobinfo">
+                    <p>01-01-2020 07:00-16:00</p>
+                    <p>Binnenrotte Rotterdam</p>
+                  </div>
+                  <a
+                    onClick="openLoc(51.9205400, 4.4886000)"
+                    class="articlelist__orderlocmobmap"
+                    ><span class="material-icons-outlined md-36"> map </span>
+                  </a>
+                  </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
               </button>
-            </span>
-          </li>
-        </ul>
-      </div>
+            </li>
 
-      <div class="login">
-        <div class="form__wrapper">
-          <img class="form__icondesktop" src="img/fresh-market-logo.png" />
-          <img class="form__iconmobile" src="img/fresh-market-logo-leaf.png" />
-          <div class="form__formwrapper">
-            <div class="form__label">Login</div>
-            <form class="form__form">
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminput"
-                  type="tel"
-                  pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
-                  id="mobnum"
-                  name="mobnum"
-                  value=""
-                  placeholder=" "
-                  required
+
+            <li id="orderloc2" class="articlelist__listitem articlelist__listitem--fit articlelist__listitem--orderloc"
+            onClick="clickOrderLoc(this.id)">
+              <span class="articlelist__listitemcontent articlelist__listitemcontent--orderloc">
+                <div  class="articlelist__orderlocmob" >
+                  <div class="articlelist__orderlocmobinfo">
+                    <p>04-01-2020 07:00-16:00</p>
+                    <p>Hesseplaats, Ommoord</p>
+                  </div>
+                  <a
+                    onClick="openLoc(51.96304, 4.55329)"
+                    class="articlelist__orderlocmobmap"
+                    ><span class="material-icons-outlined md-36"> map </span>
+                  </a>
+                  </div>
+              </span>
+              <button class="articlelist__listitembutton ">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+
+            <li id="orderloc3" class="articlelist__listitem articlelist__listitem--fit articlelist__listitem--orderloc"
+            onClick="clickOrderLoc(this.id)">
+              <span class="articlelist__listitemcontent articlelist__listitemcontent--orderloc">
+                <div  class="articlelist__orderlocmob" >
+                  <div class="articlelist__orderlocmobinfo">
+                    <p>07-01-2020 07:00-16:00</p>
+                    <p>Raadhuisplein 1, Voorhout</p>
+                  </div>
+                  <a
+                    onClick="openLoc(52.2229, 4.48689)""
+                    class="articlelist__orderlocmobmap"
+                    ><span class="material-icons-outlined md-36"> map </span>
+                  </a>
+                  </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+          </div>
+
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/rode-paprika.png"
+                  class="articlelist__listitemimg"
                 />
-                <label class="form__forminputlabel" for="mobnum"
-                  >mobiel nummer<span class="form__forminputlabelvalmgs"
-                    >+31652693 of 0652786518</span
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span
+                      class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                      >stuk</span
+                    >
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/spercieboon.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Sperciebonen</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span
+                      class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                      >gr</span
+                    >
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/seldery.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Selderij</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span
+                      class="articlelist__listitemtextqual articlelist__listitemtextqual--selected"
+                      >kg</span
+                    >
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/doperwten.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Doperwten</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/broccoli.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Broccoli</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/groene-paprika.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Groene paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/rode-paprika.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/spercieboon.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Sperciebonen</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/seldery.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Selderij</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/doperwten.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Doperwten</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/broccoli.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Broccoli</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/groene-paprika.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Groene paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/rode-paprika.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/spercieboon.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Sperciebonen</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/seldery.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Selderij</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/doperwten.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Doperwten</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/broccoli.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Broccoli</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/groene-paprika.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Groene paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/rode-paprika.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/spercieboon.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Sperciebonen</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/seldery.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Selderij</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/doperwten.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Doperwten</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img src="img/broccoli.png" class="articlelist__listitemimg" />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Broccoli</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+
+            <li class="articlelist__listitem">
+              <span class="articlelist__listitemcontent">
+                <img
+                  src="img/groene-paprika.png"
+                  class="articlelist__listitemimg"
+                />
+                <div class="articlelist__listitemdata">
+                  <span class="articlelist__listitemtitle">Groene paprika</span>
+                  <div class="articlelist__listitemquantcont">
+                    <input class="articlelist__listitemtextquant" value="300" />
+                    <span class="articlelist__listitemtextqual">stuk</span>
+                    <span class="articlelist__listitemtextqual">gr</span>
+                    <span class="articlelist__listitemtextqual">kg</span>
+                  </div>
+                </div>
+              </span>
+              <button class="articlelist__listitembutton">
+                <span class="material-icons-outlined md-36">delete</span>
+              </button>
+            </li>
+
+            <li
+              class="pickupbtn articlelist__listitem articlelist__listitem--lockedbottom"
+            >
+              <span class="articlelist__orderbtncontainer">
+                <button
+                  class="articlelist__orderbtn"
+                  onclick="clickOn(event,'pickuploc')"
+                >
+                  Kies afhaalmoment
+                </button>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="login">
+          <div class="form__wrapper">
+            <img class="form__icondesktop" src="img/fresh-market-logo.png" />
+            <img
+              class="form__iconmobile"
+              src="img/fresh-market-logo-leaf.png"
+            />
+            <div class="form__formwrapper">
+              <div class="form__label">Login</div>
+              <form class="form__form">
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminput"
+                    type="tel"
+                    pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+                    id="mobnum"
+                    name="mobnum"
+                    value=""
+                    placeholder=" "
+                    required
+                  />
+                  <label class="form__forminputlabel" for="mobnum"
+                    >mobiel nummer<span class="form__forminputlabelvalmgs"
+                      >+31652693 of 0652786518</span
+                    >
+                  </label>
+
+                  <div class="form__forminputsymbol">
+                    <span class="material-icons-outlined"> phone_iphone </span>
+                  </div>
+                </div>
+
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminput"
+                    type="password"
+                    pattern="^.*{8,}"
+                    id="pwd"
+                    name="pwd"
+                    value=""
+                    placeholder=" "
+                    required
+                  />
+                  <label class="form__forminputlabel" for="pwd"
+                    >wachtwoord</label
                   >
-                </label>
 
-                <div class="form__forminputsymbol">
-                  <span class="material-icons-outlined"> phone_iphone </span>
+                  <div class="form__forminputsymbol">
+                    <span class="material-icons-outlined"> lock </span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminput"
-                  type="password"
-                  pattern="^.*{8,}"
-                  id="pwd"
-                  name="pwd"
-                  value=""
-                  placeholder=" "
-                  required
-                />
-                <label class="form__forminputlabel" for="pwd">wachtwoord</label>
-
-                <div class="form__forminputsymbol">
-                  <span class="material-icons-outlined"> lock </span>
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminputbutton"
+                    type="submit"
+                    name="loginbutton"
+                    value="Login"
+                    onclick="clickOn(event,'login')"
+                  />
                 </div>
-              </div>
 
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminputbutton"
-                  type="submit"
-                  name="loginbutton"
-                  value="Login"
-                  onclick="clickOn(event,'login')"
-                />
-              </div>
+                <div class="form__resetlink">
+                  <a class="form__resetlink--link">nummer / wachtwoord </a
+                  >vergeten ?
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
-              <div class="form__resetlink">
-                <a class="form__resetlink--link">nummer / wachtwoord </a
-                >vergeten ?
-              </div>
-            </form>
+        <div class="registreer">
+          <div class="form__wrapper">
+            <img class="form__icondesktop" src="img/fresh-market-logo.png" />
+            <img
+              class="form__iconmobile"
+              src="img/fresh-market-logo-leaf.png"
+            />
+            <div class="form__formwrapper">
+              <div class="form__label">Registreer</div>
+              <form class="form__form">
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminput"
+                    type="tel"
+                    pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
+                    id="mobnumr"
+                    name="mobnumr"
+                    value=""
+                    placeholder=" "
+                    required
+                  />
+                  <label class="form__forminputlabel" for="mobnumr"
+                    >mobiel nummer<span class="form__forminputlabelvalmgs"
+                      >+31652693 of 0652786518</span
+                    >
+                  </label>
+
+                  <div class="form__forminputsymbol">
+                    <span class="material-icons-outlined"> phone_iphone </span>
+                  </div>
+                </div>
+
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminput"
+                    type="password"
+                    pattern="^.*{8,}"
+                    id="pwd1"
+                    name="pwd1"
+                    value=""
+                    placeholder=" "
+                    required
+                  />
+                  <label class="form__forminputlabel" for="pwd1"
+                    >wachtwoord</label
+                  >
+
+                  <div class="form__forminputsymbol">
+                    <span class="material-icons-outlined"> lock </span>
+                  </div>
+                </div>
+
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminput"
+                    type="password"
+                    pattern="^.*{8,}"
+                    id="pwd2"
+                    name="pwd2"
+                    value=""
+                    placeholder=" "
+                    required
+                  />
+                  <label class="form__forminputlabel" for="pwd2"
+                    >wachtwoord</label
+                  >
+
+                  <div class="form__forminputsymbol">
+                    <span class="material-icons-outlined"> lock </span>
+                  </div>
+                </div>
+
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminput"
+                    type="password"
+                    pattern="^.*{8,}"
+                    id="acccode"
+                    name="acccode"
+                    value=""
+                    placeholder=" "
+                  />
+                  <label class="form__forminputlabel" for="acccode"
+                    >toegangscode</label
+                  >
+
+                  <div class="form__forminputsymbol">
+                    <span class="material-icons-outlined"> verified_user </span>
+                  </div>
+                </div>
+
+                <div class="form__forminputwrapper">
+                  <input
+                    class="form__forminputbutton"
+                    type="submit"
+                    name="loginbutton"
+                    value="Registreer"
+                    onclick="clickOn(event,'registreer')"
+                  />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
+      <div class="container__contentright">
+        <div class="pickuploc__dktp">
+          <div class="articlelist__orderloc">
+            <div class="articlelist__orderlocdate">
+              <p>01-01-2020 07:00-16:00</p>
+              <p>Binnenrotte Rotterdam</p>
+            </div>
+            <div class="articlelist__orderloccity"></div>
+            <a
+              onClick="openLoc(51.9205400, 4.4886000)"
+              class="articlelist__orderlocmap"
+              id="mapid1"
+            ></a>
+          </div>
+          <div class="articlelist__orderloc">
+            <div class="articlelist__orderlocdate">
+              <p>04-01-2020 07:00-16:00</p>
+              <p>Hesseplaats, Ommoord</p>
+            </div>
+            <div class="articlelist__orderloccity"></div>
+            <a
+              onClick="openLoc(51.96304, 4.55329)"
+              class="articlelist__orderlocmap"
+              id="mapid2"
+            ></a>
+          </div>
 
-      <div class="registreer">
-        <div class="form__wrapper">
-          <img class="form__icondesktop" src="img/fresh-market-logo.png" />
-          <img class="form__iconmobile" src="img/fresh-market-logo-leaf.png" />
-          <div class="form__formwrapper">
-            <div class="form__label">Registreer</div>
-            <form class="form__form">
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminput"
-                  type="tel"
-                  pattern="^(\+31[1-9]{9})|(0[0-9]{9})$"
-                  id="mobnumr"
-                  name="mobnumr"
-                  value=""
-                  placeholder=" "
-                  required
-                />
-                <label class="form__forminputlabel" for="mobnumr"
-                  >mobiel nummer<span class="form__forminputlabelvalmgs"
-                    >+31652693 of 0652786518</span
-                  >
-                </label>
-
-                <div class="form__forminputsymbol">
-                  <span class="material-icons-outlined"> phone_iphone </span>
-                </div>
-              </div>
-
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminput"
-                  type="password"
-                  pattern="^.*{8,}"
-                  id="pwd1"
-                  name="pwd1"
-                  value=""
-                  placeholder=" "
-                  required
-                />
-                <label class="form__forminputlabel" for="pwd1"
-                  >wachtwoord</label
-                >
-
-                <div class="form__forminputsymbol">
-                  <span class="material-icons-outlined"> lock </span>
-                </div>
-              </div>
-
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminput"
-                  type="password"
-                  pattern="^.*{8,}"
-                  id="pwd2"
-                  name="pwd2"
-                  value=""
-                  placeholder=" "
-                  required
-                />
-                <label class="form__forminputlabel" for="pwd2"
-                  >wachtwoord</label
-                >
-
-                <div class="form__forminputsymbol">
-                  <span class="material-icons-outlined"> lock </span>
-                </div>
-              </div>
-
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminput"
-                  type="password"
-                  pattern="^.*{8,}"
-                  id="acccode"
-                  name="acccode"
-                  value=""
-                  placeholder=" "
-                />
-                <label class="form__forminputlabel" for="acccode"
-                  >toegangscode</label
-                >
-
-                <div class="form__forminputsymbol">
-                  <span class="material-icons-outlined"> verified_user </span>
-                </div>
-              </div>
-
-              <div class="form__forminputwrapper">
-                <input
-                  class="form__forminputbutton"
-                  type="submit"
-                  name="loginbutton"
-                  value="Registreer"
-                  onclick="clickOn(event,'registreer')"
-                />
-              </div>
-            </form>
+          <div class="articlelist__orderloc">
+            <div class="articlelist__orderlocdate">
+              <p>07-01-2020 07:00-16:00</p>
+              <p>Raadhuisplein 1, Voorhout</p>
+            </div>
+            <div class="articlelist__orderloccity"></div>
+            <a
+              onClick="openLoc(52.2229, 4.48689)"
+              class="articlelist__orderlocmap"
+              id="mapid3"
+            ></a>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container__contentright">
-
-      <div class="pickuploc__dktp">
-      <div class="articlelist__orderloc">
-        <div class="articlelist__orderlocdate">
-          <p>01-01-2020 07:00-16:00</p>
-          <p>Binnenrotte Rotterdam</p>
-        </div>
-        <div class="articlelist__orderloccity"></div>
-        <a
-          onClick="openLoc(51.9205400, 4.4886000)"
-          class="articlelist__orderlocmap"
-          id="mapid1a"
-        ></a>
-      </div>
-      <div class="articlelist__orderloc">
-        <div class="articlelist__orderlocdate">
-          <p>04-01-2020 07:00-16:00</p>
-          <p>Hesseplaats, Ommoord</p>
-        </div>
-        <div class="articlelist__orderloccity"></div>
-        <a
-          onClick="openLoc(51.96304, 4.55329)"
-          class="articlelist__orderlocmap"
-          id="mapid2a"
-        ></a>
-      </div>
-
-      <div class="articlelist__orderloc">
-        <div class="articlelist__orderlocdate">
-          <p>07-01-2020 07:00-16:00</p>
-          <p>Raadhuisplein 1, Voorhout</p>
-        </div>
-        <div class="articlelist__orderloccity"></div>
-        <a
-          onClick="openLoc(52.2229, 4.48689)"
-          class="articlelist__orderlocmap"
-          id="mapid3a"
-        ></a>
-      </div>
-    </div>
-
-
-
-    </div>
     </main>
 
     <footer class="container__bottombar">
@@ -944,7 +1028,7 @@
         </div>
         <div class="buttonbar__button">
           <div class="buttonbar__buttonlabel"
-          onclick="clickOn(event,'mystall')"">
+          onclick="clickOn(event,'mystall')">
           <!-- 
           <i class="lni lni-ticket-alt"></i> -->
           <span class="material-icons-outlined md-36"> storefront </span>
