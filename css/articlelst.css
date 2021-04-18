@@ -54,11 +54,11 @@
 
 }
 
-.articlelist__listitem--nodisplay {
+/* .articlelist__listitem--nodisplay {
   /* display:none !important; */
     max-height: 0 !important;
     margin: 0 !important;
-}
+} */
 
 
 
@@ -86,18 +86,22 @@
 
 .articlelist__listitembutton {
     border: none;
-    color: var(--bkgroundcolor);
+    background-color: var(--bkgroundcolor);
     cursor: pointer;
   }
   
+  .articlelist__listitembutton--hidden {
+    display:none;
+  }
+    
   .articlelist__listitembutton:first-of-type {
     flex: 1 0 10%;
-    background-color: var(--swipealtbuttoncolor);
+    color: var(--swipealtbuttoncolor);
   }
 
   .articlelist__listitembutton:last-of-type {
     flex: 1 0 10%;
-    background-color: var(--swipedelbuttoncolor);
+    color: var(--swipedelbuttoncolor);
   }
   
   .articlelist__listitemcontent {
@@ -121,12 +125,13 @@
       flex: 0 0 auto;
     height: 50px;
     width: 50px;
-    padding-right: 20px;
+    margin-right: 20px;
 }
+
 .articlelist__listitemdata {
     display:flex;
     flex-flow: column nowrap;
-    flex: 0 1 auto;
+    flex: 1 1 auto;
 }
 
   .articlelist__listitemtitle {
@@ -141,16 +146,17 @@
   .articlelist__listitemquantcont {
     
       display:flex;
-      flex: 0 1 auto;
+      flex: 1 1 auto;
 
    
   }
 
   .articlelist__listitemtextquant {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     border: 1px solid var(--fgcolor);
     border-radius: 2px;
-    width:5em;
+    max-width:4em;
+    min-width:3em;
     height:1.5em;
     color:var(--fgcolor);;
     padding: .1em;
@@ -158,14 +164,15 @@
   }
 
   .articlelist__listitemtextqual {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     color: var(--fgcolor);
     background-color: var(--bkgroundcolor);
     border-radius: 2px;
     height:1.5em;
     padding: 0;
     margin-left:5px;
-    width:5em;
+    max-width:6em;
+    min-width:3em;
     text-align: center;
   }
 
@@ -299,7 +306,7 @@
   font-weight: 400; */
   /* line-height: 1; */
   color: var(--btnfgcolor);
-  font-size: 1em;
+  font-size: clamp(0.7em,7vw,1em);
   /* height: 50px; */
   background: var(--buttoncolor);
   border-radius: 4px;
@@ -307,14 +314,10 @@
 }
 
 .articlelist__orderlocmob {
-
   font-size: 1em;
   flex: 1 0 auto; 
   display: flex;
-align-items: center;
-
-
-
+  align-items: center;
 }
 
 .articlelist__orderlocmobinfo {
@@ -322,6 +325,21 @@ align-items: center;
   flex: 1 0 auto;
   padding:4px;
   color: var(--fgcolor);
+
+}
+
+.articlelist__orderlocmobselected {
+  
+  flex: 0 0 auto;
+  padding:4px;
+  color: var(--buttoncolor);
+
+}
+
+.articlelist__orderlocmobselected--hidden {
+  
+  display:none
+
 }
 
 .articlelist__orderlocmobmap {

@@ -4,6 +4,16 @@
 
 // var mymap = null;
 
+const days = [
+  "zondag",
+  "maandag",
+  "dinsdag",
+  "woensdag",
+  "donderdag",
+  "vrijdag",
+  "zaterdag",
+];
+
 (function () {
   window.addEventListener("load", update, false);
 })();
@@ -42,7 +52,7 @@ let registreerVisible = true;
 let articleListVisible = false;
 let stallVisible = false;
 let article1Visible = false;
-let pickuplocVisible = false ;
+let pickuplocVisible = false;
 
 function update() {
   show("error", errorVisible);
@@ -55,32 +65,29 @@ function update() {
   show("pickuploc__dktp", pickuplocVisible);
 
   // if (articleListVisible) {
-    // createMap("mapid1",51.92054, 4.4886);
-    // createMap("mapid2",51.96304, 4.55329);
-    // createMap("mapid3",52.2229, 4.48689);
-    
-    // mymap = L.map("mapid1", {
-    //   attributionControl: false,
-    //   zoomControl: false,
-    //   center: [51.92054, 4.4886],
-    //   zoom: 17,
-    // });
+  // createMap("mapid1",51.92054, 4.4886);
+  // createMap("mapid2",51.96304, 4.55329);
+  // createMap("mapid3",52.2229, 4.48689);
 
-    // L.marker([51.92054, 4.4886]).addTo(mymap);
-    // L.control.attribution({ prefix: "" }).addTo(mymap);
-    // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}", {
-    //   foo: "bar",
-    //   attribution:
-    //     '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
-    // }).addTo(mymap);
+  // mymap = L.map("mapid1", {
+  //   attributionControl: false,
+  //   zoomControl: false,
+  //   center: [51.92054, 4.4886],
+  //   zoom: 17,
+  // });
 
-
+  // L.marker([51.92054, 4.4886]).addTo(mymap);
+  // L.control.attribution({ prefix: "" }).addTo(mymap);
+  // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}", {
+  //   foo: "bar",
+  //   attribution:
+  //     '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+  // }).addTo(mymap);
 
   // }
 }
 
-function createMap(mapID,Lat,Long) {
-
+function createMap(mapID, Lat, Long) {
   const mymap = L.map(mapID, {
     attributionControl: false,
     zoomControl: false,
@@ -95,7 +102,6 @@ function createMap(mapID,Lat,Long) {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
   }).addTo(mymap);
-
 }
 
 function clickOn(event, component) {
@@ -133,14 +139,14 @@ function clickOn(event, component) {
       break;
 
     case "myorder":
-      clickOrderLoc("",false);
+      clickOrderLoc("", false);
       errorVisible = false;
       loginVisible = false;
       registreerVisible = false;
       articleListVisible = true;
       stallVisible = false;
       article1Visible = false;
-      pickuplocVisible= false;
+      pickuplocVisible = false;
       break;
 
     case "article1":
@@ -210,15 +216,15 @@ function clickOn(event, component) {
       }
       break;
 
-      case "pickuploc":
-        errorVisible = false;
-        loginVisible = false;
-        registreerVisible = false;
-        articleListVisible = true;
-        stallVisible = false;
-        article1Visible = false;
-        pickuplocVisible = true;  
-        break;
+    case "pickuploc":
+      errorVisible = false;
+      loginVisible = false;
+      registreerVisible = false;
+      articleListVisible = true;
+      stallVisible = false;
+      article1Visible = false;
+      pickuplocVisible = true;
+      break;
 
       break;
   }
@@ -226,14 +232,10 @@ function clickOn(event, component) {
   update();
 
   if (component === "pickuploc") {
-      
-
-    createMap("mapid1",51.92054, 4.4886);
-    createMap("mapid2",51.96304, 4.55329);
-    createMap("mapid3",52.2229, 4.48689);
+    createMap("mapid1", 51.92054, 4.4886);
+    createMap("mapid2", 51.96304, 4.55329);
+    createMap("mapid3", 52.2229, 4.48689);
   }
-
-
 }
 
 function show(className, visible) {
@@ -245,18 +247,16 @@ function show(className, visible) {
 }
 
 function showAllWithHeight(id, show) {
-
-  const elements = document.querySelectorAll('*[id^="'+id+'"]');
-  for (var elm = 0 ; elm < elements.length ; elm++) {
+  const elements = document.querySelectorAll('*[id^="' + id + '"]');
+  for (var elm = 0; elm < elements.length; elm++) {
     if (show) {
-    elements[elm].classList.remove('articlelist__listitem--hidden');
+      elements[elm].classList.remove("articlelist__listitem--hidden");
     } else {
-      elements[elm].classList.add('articlelist__listitem--hidden');
+      elements[elm].classList.add("articlelist__listitem--hidden");
     }
-  };
-  
-    // document.getElementsByIds(id)[0].style.maxHeight = maxHeight;
-  
+  }
+
+  // document.getElementsByIds(id)[0].style.maxHeight = maxHeight;
 }
 
 function openLoc(lat, lng) {
@@ -271,25 +271,38 @@ function openLoc(lat, lng) {
 }
 
 function macPlatform() {
-
-  return ['MacIntel','iPhone'].includes(navigator.platform) ;
-        
+  return ["MacIntel", "iPhone"].includes(navigator.platform);
 }
 
 function clickOrderLoc(id, clicked = true) {
+  let orderlocs = document.querySelectorAll('*[id^="orderloc"]');
 
- let orderlocs = document.querySelectorAll('*[id^="orderloc"]');
- for (var ol = 0 ; ol < orderlocs.length ; ol++) {
-  if (orderlocs[ol].id != id) {
-    if (clicked) {    
-      orderlocs[ol].classList.add('articlelist__listitem--nodisplay');
-  } else {
-    orderlocs[ol].classList.remove('articlelist__listitem--nodisplay');
+
+  for (var ol = 0; ol < orderlocs.length; ol++) {
+    if (orderlocs[ol].id != id) {
+      if (clicked) {
+        orderlocs[ol].classList.add("articlelist__listitem--hidden");
+      } else {        
+        orderlocs[ol].classList.remove("articlelist__listitem--hidden");
+
+        let selectedOrderLoc = orderlocs[ol].getElementsByClassName('articlelist__orderlocmobselected');
+        selectedOrderLoc[0].classList.add('articlelist__orderlocmobselected--hidden') ;
+
+        let selectedOrderDeleteButton = orderlocs[ol].getElementsByClassName('articlelist__listitembutton');
+        selectedOrderDeleteButton[0].classList.add('articlelist__listitembutton--hidden') ;
+      }
+    } else {
+      let selectedOrderLoc = orderlocs[ol].getElementsByClassName('articlelist__orderlocmobselected');
+      let selectedOrderDeleteButton = orderlocs[ol].getElementsByClassName('articlelist__listitembutton');
+      if (clicked) {
+      selectedOrderLoc[0].classList.remove('articlelist__orderlocmobselected--hidden') ;
+      selectedOrderDeleteButton[0].classList.remove('articlelist__listitembutton--hidden');
+      // console.log('!');
+
+      } 
+    }
   }
-  }
- }
 }
-
 
 function iOS() {
   return (
